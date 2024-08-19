@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Using Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4.0.3
         with:
           node-version: 20.
       - name: run install, build and test
@@ -22,6 +22,6 @@ jobs:
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@github.com"
           npm install
-          npm run test
           npm run lint
+          npm run test
           npm run build
